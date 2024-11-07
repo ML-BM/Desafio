@@ -1,0 +1,15 @@
+#main-components{
+    display: grid;
+    width: 800px;
+    grid-template-columns: 2fr 1fr 0.5fr;
+}
+#sub-components{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+#main-features{
+    display: grid;
+    width: 800px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
