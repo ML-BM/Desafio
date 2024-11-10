@@ -1,15 +1,151 @@
-#main-components{
-    display: grid;
-    width: 800px;
-    grid-template-columns: 2fr 1fr 0.5fr;
+@layer reset, base, theme, layout, components;
+
+/*Reset da página*/
+@layer reset{
+    html,body {
+        margin: 0;
+        padding: 0;
+    }
 }
-#sub-components{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+
+/*Contém estilos fundamentais e globais*/
+@layer base{
+    :root {
+        --background-color: #f0f4f8;
+        --text-color: #252B42; /*também é usado no header*/
+        --second-text-color: #737373;
+        --primary-color: #007bff;
+        --hover-color: #2A7CC7;
+        --secondary-color: #6c757d;
+        --secondary-color-1: #23856D;
+        --secondary-color-2: #40BB15;
+        --light-bg: #ffffff;
+        --dark-bg: #343a40;
+        --light-text: #ffffff;
+        --light-text-gray: #FAFAFA;
+        --dark-text: #000000;
+        --success-color: #2DC071;
+      }
 }
-#main-features{
-    display: grid;
-    width: 800px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+/*Responsável pela estrutura e layout da página*/
+@layer layout{}
+
+/*Estilos específicos para componentes reutilizáveis*/
+@layer components{
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('https://fonts.gstatic.com/lv1/libs/montserrat/v23/subset=wght@400..700,latin-ext') format('opentype');
+        font-weight: 400 700;
+        font-display: swap;
+      }
+
+      @media(width < 1024px) and (width > 414px){
+        .carousel {
+            width: 100%;
+            padding-top: 40%; /* Ajuste para a proporção desejada */
+            background-image: url('../assets/carousel.png');
+            background-size: contain; /* Faz a imagem cobrir o contêiner */
+            background-position: center; /* Centraliza a imagem */
+            background-repeat: no-repeat; /* Evita repetição da imagem */
+            color: var(--light-text);
+            text-align: center;
+      }
+      
+    }
+
+      @media(width >= 1024px){
+        .carousel {
+            width: 100%;
+            background-image: url('../assets/carousel.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative; /* Adiciona a capacidade de posicionar elementos filhos de forma absoluta */
+        }
+        
+        #home-container {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        
+        /* Estilo para os botões */
+        .btn-home {
+            position: absolute; /* Posiciona os botões em relação ao .carousel */
+            top: 40%; /* Posiciona verticalmente no meio da tela */
+        }
+        
+        .btn-home:first-of-type {
+            left: 4vh; /* Distância de 30px da margem esquerda de .carousel */
+        }
+        
+        .btn-home:last-of-type {
+            right: 4vh; /* Distância de 30px da margem direita de .carousel */
+        }
+
+        h1{
+            color:var(--light-text);
+            font-family: 'Montserrat', sans-serif; /* Aplica a fonte Montserrat */
+            font-size: 58px; /* Define o tamanho da fonte do h1 para 58px */
+            letter-spacing: 0.2px;
+            line-height: 80px;
+            font-weight: bold;
+        }
+
+        h3{
+            color:var(--light-text);
+            font-family: 'Montserrat', sans-serif; /* Aplica a fonte Montserrat */
+            font-size: 24px; /* Define o tamanho da fonte do h1 para 58px */
+            letter-spacing: 0.1px;
+            line-height: 32px;
+            font-weight: bold;  
+        }
+
+        h4{
+            color:var(--light-text);
+            font-family: 'Montserrat', sans-serif; /* Aplica a fonte Montserrat */
+            font-size: 20px; /* Define o tamanho da fonte do h1 para 58px */
+            letter-spacing: 0.2px;
+            line-height: 30px;
+            font-weight: normal;  
+        }
+
+        h5{
+            color:var(--light-text);
+            font-family: 'Montserrat', sans-serif; /* Aplica a fonte Montserrat */
+            font-size: 20px; /* Define o tamanho da fonte do h1 para 58px */
+            letter-spacing: 0.1px;
+            line-height: 24px;
+            font-weight: regular;   
+        }
+
+        #home-container #btn-first-ca{
+           background-color: var(--success-color);
+           border: none;
+           width: 228px;
+           height: 62px;
+           border-radius: 0.5vh;
+        }
+        #btn-first-ca h3 {
+           margin-top: 2px;
+           margin-bottom: 2px;
+           
+        }
+        
+        #home-container #btn-first-ca:hover{
+            background-color: var(--secondary-color-2);
+            border: none;
+            width: 228px;
+            height: 62px;
+            border-radius: 0.5vh;
+         }
+
+    }     
 }

@@ -1,2 +1,2 @@
 # Desafio
-Criação de uma página web utilizando HTML, CSS, JavaScript ou TypeScript
+Criação de uma página web utilizando HTML, CSS e JavaScript.
