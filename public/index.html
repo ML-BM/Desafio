@@ -11,71 +11,274 @@
 <body>
     <header>
         <nav>
-            <!--header com os ícones que irão aparecer no design responsivo para mobile-->
-            <!--header com os ícones que irão aparecer no design wed padrão-->
-            <ul class="nav-links" id="nav-links">
+             <!--header com os ícones que irão aparecer no design responsivo para mobile-->
+             <ul class="nav-links" id="nav-links">
+                <h3>Bandage</h3>
+                <img src="../src/assets/search.png">
+                <img src="../src/assets/shop.png">
+                <img src="../src/assets/menu.png">
+             </ul>
+            <a class="menu-toggle" id="menu-toggle" aria-label="Menu button" aria-expanded="false">
+            </a>
+        </nav>
+        <section id="sec=nav">
+             <!--header com os ícones que irão aparecer no design wed padrão-->
+             <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#shop">Shop</a></li>
                 <li><a href="#product">Product</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
+        </section>
     </header>
     <main>
-        <section id="home"class="carousel">
-            <section class="btn-home">
-                <a>BTN</a>
-            </section>
+        <!-- PRIMEIRO CARROSSEL ----------------------------------------------------------------------------------->
+        <section id="home" class="carousel">
+            <img id="control1" src="../src/assets/carousel-control-prev.png">
+            <img id="control2" src="../src/assets/carousel-control-next.png">
             <div id="home-container">
-                <section>
+                <section id="text-home">
                     <h5>SUMMER 2020</h5>
-                    <h1>NEW COLLECTION</h1>
-                    <h4>We know how large objects will act, but things on a small scale.</h4>
-                    <button id="btn-first-ca" type="submit"><h3>SHOP NOW</h3></button>
+                    <h2>NEW COLLECTION</h1>
+                        <h4>We know how large objects
+                            will act, but things on a
+                            small scale.
+                        </h4>
                 </section>
+                <button id="btn-first-ca" type="submit">
+                    <h3>SHOP NOW</h3>
+                </button>
             </div>
-            <section class="btn-home">
-                <a>BTN</a>
-            </section>
         </section>
-        <!--seção com as categorias de roupas-->
-        <section id="components" class="components">
-            <h2>Editor's pick</h2>
+        <!--seção com as categorias de roupas---------------------------------------------------------------------->
+        <section id="e-pick" class="components-container">
+            <h2>EDITOR'S PICK</h2>
             <p>Problems trying to resolve the conflict between</p>
-                <!---->
-                <div id="main-components">
-                    <img src="../src/assets/men.png">
-                    <img src="../src/assets/women.png">
-                        <div id="sub-components">
-                            <img id="first-img-components" src="../src/assets/accessories.png">
-                            <img id="first-img-components" src="../src/assets/kids.png">
-                        </div>
+            <!---->
+            <div id="main-components">
+                <img src="../src/assets/men.png">
+                <img src="../src/assets/women.png">
+                <div id="sub-components">
+                    <img id="first-img-components" src="../src/assets/accessories.png">
+                    <img id="first-img-components" src="../src/assets/kids.png">
                 </div>
+            </div>
         </section>
-        <section id="features" class="features">
-            <h3>Featured Products</h3>
-            <h2>BESTSELLER PRODUCTS</h2>
-            <p>Problems trying to resolve the conflict between</p>
-                <!---->
-                <div id="main-features">
-                        <img src="../src/assets/img1.png">
-                        <img src="../src/assets/img2.png">
-                        <img src="../src/assets/img3.png">
-                        <img src="../src/assets/img4.png">
-                        <img src="../src/assets/img5.png">
-                        <img src="../src/assets/img6.png">
-                        <img src="../src/assets/img7.png">
-                        <img src="../src/assets/img8.png">
+        <!--BESTSELLER--------------------------------------------------------------------------------------------->
+        <section id="bestseller">
+            <h4>Featured Products</h4>
+            <h3>BESTSELLER <br> PRODUCTS</h3>
+            <p>Problems trying to resolve the <br> conflict between</p>
+            <div id="bestseller-components">
+                <div class="bc-products">
+                    <img class="products" src="../src/assets/img1.png">
+                    <div class="description">
+                        <h5>Graphic Design</h5>
+                        <ag-link>English Department</ag-link>
+                        <section class="price">
+                            <h5 class="f-price">$16.48</h5>
+                            <h5 class="s-price">$6.48</h5>
+                        </section>
+                        <img class="colors" src="../src/assets/product-colors.png">
+                    </div>
                 </div>
+                <img class="products" src="../src/assets/img2.png">
+                <div class="description">
+                    <h5>Graphic Design</h5>
+                    <ag-link>English Department</ag-link>
+                    <section class="price">
+                        <h5 class="f-price">$16.48</h5>
+                        <h5 class="s-price">$6.48</h5>
+                    </section>
+                    <img class="colors" src="../src/assets/product-colors.png">
+                </div>
+                <img class="products" src="../src/assets/img3.png">
+                <div class="description">
+                    <h5>Graphic Design</h5>
+                    <ag-link>English Department</ag-link>
+                    <section class="price">
+                        <h5 class="f-price">$16.48</h5>
+                        <h5 class="s-price">$6.48</h5>
+                    </section>
+                    <img class="colors" src="../src/assets/product-colors.png">
+                </div>
+                <img class="products" src="../src/assets/img4.png">
+                <div class="description">
+                    <h5>Graphic Design</h5>
+                    <ag-link>English Department</ag-link>
+                    <section class="price">
+                        <h5 class="f-price">$16.48</h5>
+                        <h5 class="s-price">$6.48</h5>
+                    </section>
+                    <img class="colors" src="../src/assets/product-colors.png">
+                </div>
+                <img class="products" src="../src/assets/img5.png">
+                <div class="description">
+                    <h5>Graphic Design</h5>
+                    <ag-link>English Department</ag-link>
+                    <section class="price">
+                        <h5 class="f-price">$16.48</h5>
+                        <h5 class="s-price">$6.48</h5>
+                    </section>
+                    <img class="colors" src="../src/assets/product-colors.png">
+                </div>
+                <img class="products" src="../src/assets/img6.png">
+                <div class="description">
+                    <h5>Graphic Design</h5>
+                    <ag-link>English Department</ag-link>
+                    <section class="price">
+                        <h5 class="f-price">$16.48</h5>
+                        <h5 class="s-price">$6.48</h5>
+                    </section>
+                    <img class="colors" src="../src/assets/product-colors.png">
+                </div>
+                <img class="products" src="../src/assets/img7.png">
+                <div class="description">
+                    <h5>Graphic Design</h5>
+                    <ag-link>English Department</ag-link>
+                    <section class="price">
+                        <h5 class="f-price">$16.48</h5>
+                        <h5 class="s-price">$6.48</h5>
+                    </section>
+                    <img class="colors" src="../src/assets/product-colors.png">
+                </div>
+                <img class="products" src="../src/assets/img8.png">
+                <div class="description">
+                    <h5>Graphic Design</h5>
+                    <ag-link>English Department</ag-link>
+                    <section class="price">
+                        <h5 class="f-price">$16.48</h5>
+                        <h5 class="s-price">$6.48</h5>
+                    </section>
+                    <img class="colors" src="../src/assets/product-colors.png">
+                </div>
+            </div>
+        </section>
+
+        <!-- SEGUNDO CARROSSEL ----------------------------------------------------------------------------------->
+        <section class="carousel2">
+            <img id="control3" src="../src/assets/carousel-control-prev.png">
+            <img id="control4" src="../src/assets/carousel-control-next.png">
+            <div id="home-container">
+                <section id="text-home">
+                    <h4>SUMMER 2020</h4>
+                    <h2>Vita Classic Product</h1>
+                        <h4>We know how large objects
+                            <br>will act, but things on a
+                            <br>small scale.
+                        </h4>
+                        <h3>$16.48</h3>
+                </section>
+                <button id="btn-ca" type="submit">
+                    <p>ADD TO CART</p>
+                </button>
+            </div>
+            <div id="carousel2-png">
+                <img  src="../src/assets/carousel2.png">
+            </div>
+        </section>
+
+        <!-- N-UNIVERSE ---------------------------------------------------------------------------------------->
+        <section id="n-universe">
+            <h5>SUMMER 2020</h5>
+            <h2>Part of the Neural Universe</h2>
+            <h4>We know how large objects will act, but things on a small scale.</h4>
+            <button id="btn-buy" type="submit">
+                <btn-text>BUY NOW</btn-text>
+            </button>
+            <button id="btn-learn" type="submit">
+                <btn-text2>Learn more</btn-text2>
+            </button>
+            <div id="hero-png">
+                <img src="../src/assets/hero-cover-1.png">
+            </div>
+        </section>
+        <!-- FEATURED PRODUCTS ---------------------------------------------------------------------------------------->
+        <section id="f-products">
+            <div id="f-text">
+                <h6>Practice Advice</h6>
+                <h2>Featured Products</h2>
+                <h4>Problems trying to resolve the conflict between two major</h4>
+            </div>
+            <div id="f-components">
+                <div class="f-topics">
+                    <img src="../src/assets/f-img1.png">
+                    <img src="../src/assets/Frame.png">
+                </div>
+                <div class="f-topics">
+                    <img src="../src/assets/f-img2.png">
+                    <img src="../src/assets/Frame.png">
+                </div>
+                <div class="f-topics">
+                    <img src="../src/assets/f-img3.png">
+                    <img src="../src/assets/Frame.png">
+                </div>
+            </div>
         </section>
     </main>
 
+    <section class="first-footer">
+        <section id="bandage">
+            <div id="bandage-limiter">
+                <h3>Bandage</h3>
+                <img src="../src/assets/social media primary.png">
+            </div>
+        </section>
+        <section id="info">
+            <div class="footer-container">
+                <div id="c-info" class="infos-container">
+                    <ul>
+                        <h5>Company Info</h5>
+                        <ag-link>About Us</ag-link>
+                        <ag-link>Carrier</ag-link>
+                        <ag-link>We are hiring</ag-link>
+                        <ag-link>Blog</ag-link>
+                    </ul>
+                </div>
+                <div id="c-legal" class="infos-container">
+                    <ul>
+                        <h5>Legal</h5>
+                        <ag-link>About Us</ag-link>
+                        <ag-link>Carrier</ag-link>
+                        <ag-link>We are hiring</ag-link>
+                        <ag-link>Blog</ag-link>
+                    </ul>
+                </div>
+                <div id="c-features" class="infos-container">                  
+                    <ul>
+                        <h5>Features</h5>
+                        <ag-link>Business Marketing</ag-link>
+                        <ag-link>User Analytic</ag-link>
+                        <ag-link>Live Chat</ag-link>
+                        <ag-link>Unlimited Support</ag-link>
+                    </ul>
+                </div>
+                <div id="c-resources" class="infos-container">
+                    <ul>
+                        <h5>Resources</h5>
+                        <ag-link>IOS & Android</ag-link>
+                        <ag-link>Watch a Demo</ag-link>
+                        <ag-link>Customers</ag-link>
+                        <ag-link>API</ag-link>
+                    </ul>
+                </div>
+                <div id="c-get-in-touch" class="footer-container">
+                    <div id="contact">
+                        <label><h5>Get In Touch</h5></label>
+                        <input type="text" id="email" name="email" placeholder="Your Email" required />
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     <footer>
+            <div id="footer-limiter">
+                <ag-link>Made With Love By 
+                    Finland All Right Reserved </ag-link>
+            </div>
+        </section>        
     </footer>
-    
-    <script>
-    </script>
 </body>
 
 </html>

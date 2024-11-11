@@ -1,18 +1,25 @@
 @layer reset, base, theme, layout, components;
 
 /*Reset da página*/
-@layer reset{
-    html,body {
+@layer reset {
+    * {
         margin: 0;
         padding: 0;
+    }
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
     }
 }
 
 /*Contém estilos fundamentais e globais*/
-@layer base{
+@layer base {
     :root {
         --background-color: #f0f4f8;
-        --text-color: #252B42; /*também é usado no header*/
+        --text-color: #252B42;
+        /*também é usado no header*/
         --second-text-color: #737373;
         --primary-color: #007bff;
         --hover-color: #2A7CC7;
@@ -25,127 +32,538 @@
         --light-text-gray: #FAFAFA;
         --dark-text: #000000;
         --success-color: #2DC071;
-      }
+        --muted-color: #BDBDBD;
+    }
 }
 
 /*Responsável pela estrutura e layout da página*/
-@layer layout{}
-
-/*Estilos específicos para componentes reutilizáveis*/
-@layer components{
-    @font-face {
-        font-family: 'Montserrat';
-        src: url('https://fonts.gstatic.com/lv1/libs/montserrat/v23/subset=wght@400..700,latin-ext') format('opentype');
-        font-weight: 400 700;
-        font-display: swap;
-      }
-
-      @media(width < 1024px) and (width > 414px){
-        .carousel {
-            width: 100%;
-            padding-top: 40%; /* Ajuste para a proporção desejada */
-            background-image: url('../assets/carousel.png');
-            background-size: contain; /* Faz a imagem cobrir o contêiner */
-            background-position: center; /* Centraliza a imagem */
-            background-repeat: no-repeat; /* Evita repetição da imagem */
-            color: var(--light-text);
-            text-align: center;
-      }
-      
+@layer layout {
+    p {
+        color: var(--second-text-color);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        line-height: 20px;
+        font-weight: normal;
     }
 
-      @media(width >= 1024px){
+    h1 {
+        color: var(--light-text);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 58px;
+        letter-spacing: 0.2px;
+        line-height: 80px;
+        font-weight: bold;
+    }
+
+    h2 {
+        color: var(--text-color);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 40px;
+        letter-spacing: 0.2px;
+        line-height: 50px;
+        font-weight: bold;
+    }
+
+    h3 {
+        color: var(--text-color);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 24px;
+        letter-spacing: 0.1px;
+        line-height: 32px;
+        font-weight: bold;
+    }
+
+    h4 {
+        color: var(--second-text-color);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        letter-spacing: 0.2px;
+        line-height: 30px;
+        font-weight: normal;
+    }
+
+    h5 {
+        color: var(--text-color);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        letter-spacing: 0.1px;
+        line-height: 24px;
+        font-weight: regular;
+    }
+
+    h6 {
+        color: var(--primary-color);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        line-height: 24px;
+        font-weight: regular;
+    }
+
+
+    ag-link {
+        color: var(--second-text-color);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        line-height: 24px;
+        font-weight: bold;
+    }
+
+}
+
+/*Estilos específicos para componentes reutilizáveis*/
+@layer components {
+
+    @media (width <=768px) {
+
+        /*Primeiro carrossel------------------------------------------------------------------------------------------*/
         .carousel {
-            width: 100%;
             background-image: url('../assets/carousel.png');
             background-size: cover;
-            background-position: center;
             background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            position: relative; /* Adiciona a capacidade de posicionar elementos filhos de forma absoluta */
-        }
-        
-        #home-container {
-            width: 70%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-        }
-        
-        /* Estilo para os botões */
-        .btn-home {
-            position: absolute; /* Posiciona os botões em relação ao .carousel */
-            top: 40%; /* Posiciona verticalmente no meio da tela */
-        }
-        
-        .btn-home:first-of-type {
-            left: 4vh; /* Distância de 30px da margem esquerda de .carousel */
-        }
-        
-        .btn-home:last-of-type {
-            right: 4vh; /* Distância de 30px da margem direita de .carousel */
+            background-position: center;
+            overflow: hidden;
+            position: relative;
+            min-height: 753px;
         }
 
-        h1{
-            color:var(--light-text);
-            font-family: 'Montserrat', sans-serif; /* Aplica a fonte Montserrat */
-            font-size: 58px; /* Define o tamanho da fonte do h1 para 58px */
+        .carousel #control1,
+        .carousel #control2 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel #control1 {
+            left: 35px;
+        }
+
+        .carousel #control2 {
+            right: 35px;
+        }
+
+        #home-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 160px;
+            gap: 35px;
+        }
+
+        #text-home {
+            margin-top: 48px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding-left: 40px;
+            padding-right: 40px;
+            gap: 35px;
+        }
+
+        #text-home h2 {
+            color: var(--light-text);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 40px;
             letter-spacing: 0.2px;
-            line-height: 80px;
+            line-height: 50px;
             font-weight: bold;
         }
 
-        h3{
-            color:var(--light-text);
-            font-family: 'Montserrat', sans-serif; /* Aplica a fonte Montserrat */
-            font-size: 24px; /* Define o tamanho da fonte do h1 para 58px */
-            letter-spacing: 0.1px;
-            line-height: 32px;
-            font-weight: bold;  
+        #text-home h4 {
+            color: var(--light-text);
         }
 
-        h4{
-            color:var(--light-text);
-            font-family: 'Montserrat', sans-serif; /* Aplica a fonte Montserrat */
-            font-size: 20px; /* Define o tamanho da fonte do h1 para 58px */
-            letter-spacing: 0.2px;
-            line-height: 30px;
-            font-weight: normal;  
+        #text-home h5 {
+            color: var(--light-text);
         }
 
-        h5{
-            color:var(--light-text);
-            font-family: 'Montserrat', sans-serif; /* Aplica a fonte Montserrat */
-            font-size: 20px; /* Define o tamanho da fonte do h1 para 58px */
-            letter-spacing: 0.1px;
-            line-height: 24px;
-            font-weight: regular;   
-        }
-
-        #home-container #btn-first-ca{
-           background-color: var(--success-color);
-           border: none;
-           width: 228px;
-           height: 62px;
-           border-radius: 0.5vh;
-        }
-        #btn-first-ca h3 {
-           margin-top: 2px;
-           margin-bottom: 2px;
-           
-        }
-        
-        #home-container #btn-first-ca:hover{
-            background-color: var(--secondary-color-2);
+        #home-container #btn-first-ca {
+            background-color: var(--success-color);
             border: none;
-            width: 228px;
+            width: 221px;
             height: 62px;
             border-radius: 0.5vh;
-         }
+        }
 
-    }     
+        #home-container #btn-first-ca h3 {
+            color: var(--light-text);
+        }
+
+        .components-container {
+            margin-bottom: 80px;
+        }
+
+        /*EDITOR'S PICK------------------------------------------------------------------------------------------*/
+        #e-pick {
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .components-epick {
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #main-components {
+            margin-top: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .components-epick p {
+            margin-top: 20px;
+        }
+
+        #main-components img {
+            height: 500px;
+            width: 325px;
+            object-fit: cover;
+        }
+
+        #main-components #sub-components {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 2fr;
+            row-gap: 20px;
+        }
+
+        #main-components #sub-components img {
+            height: 242px;
+            width: 325px;
+            object-fit: cover;
+        }
+
+        #components-container {
+            margin-bottom: 80px;
+        }
+
+        /*BESTSELLER ------------------------------------------------------------------------------------------*/
+        #bestseller {
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+        }
+
+        #bestseller-components {
+            margin-top: 48px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        #bestseller-components div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #bestseller-components div section.price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            /* Adiciona espaço entre os elementos dentro da seção price */
+        }
+
+        #bestseller-components .products {
+            height: 500px;
+            width: 325px;
+            object-fit: cover;
+        }
+
+        #bestseller-components .description {
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }
+
+        #bestseller-components div section.price h5.f-price {
+            color: var(--muted-color);
+        }
+
+        /*Segundo carrossel------------------------------------------------------------------------------------------*/
+        .carousel2 {
+            background-color: var(--secondary-color-1);
+            overflow: hidden;
+            position: relative;
+            min-height: 740px;
+            max-height: 1230px;
+        }
+
+        .carousel2 #control3,
+        .carousel2 #control4 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel2 #control3 {
+            left: 35px;
+        }
+
+        .carousel2 #control4 {
+            right: 35px;
+        }
+
+        #carousel2-png img {
+            object-fit: fill;
+            max-width: 105%;
+            max-height: 105%;
+            position: relative;
+            padding-top: 30px;
+            right: 3%;
+        }
+
+        #home-container h3 {
+            color: var(--light-text);
+        }
+
+        #home-container #btn-ca {
+            background-color: var(--success-color);
+            border: none;
+            width: 184px;
+            height: 52px;
+            border-radius: 0.5vh;
+        }
+
+        #home-container #btn-ca p {
+            color: var(--light-text);
+        }
+
+        /*Part of the Neural Universe --------------------------------------------------------------------------------*/
+        #hero-png {
+            width: 414px;
+            height: 407px;
+        }
+
+        #hero-png img {
+            object-fit: fill;
+            max-width: 148%;
+            max-height: 148%;
+            position: relative;
+            right: 32%;
+        }
+
+        #n-universe {
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 33px;
+        }
+
+        #n-universe h5 {
+            color: var(--muted-color);
+        }
+
+        #n-universe #btn-buy {
+            background-color: var(--primary-color);
+            border: none;
+            width: 165px;
+            height: 52px;
+            border-radius: 0.5vh;
+        }
+
+        #n-universe #btn-learn {
+            background-color: var(--light-bg);
+            border-width: 1px;
+            border-color: var(--primary-color);
+            width: 165px;
+            height: 52px;
+            border-radius: 0.5vh;
+        }
+
+        #n-universe #btn-buy btn-text {
+            color: var(--light-text);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.2px;
+            line-height: 22px;
+            font-weight: bold;
+        }
+
+        #n-universe #btn-learn btn-text2 {
+            color: var(--primary-color);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.2px;
+            line-height: 22px;
+            font-weight: bold;
+        }
+
+        /*Featured Products -------------------------------------------------------------------------------------*/
+        #f-products {
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 33px;
+            ;
+        }
+
+        #f-products img {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            object-fit: cover;
+        }
+
+        .f-components {
+            margin-top: 48px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        #f-components div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        /*Primeira parte do footer -------------------------------------------------------------------------------------------------*/
+        #bandage {
+            padding-top: 40px;
+            background-color: var(--light-text-gray);
+            padding-bottom: 40px;
+        }
+
+        #bandage #bandage-limiter {
+            display: flex;
+            flex-direction: column;
+            align-items: self-start;
+            padding-left: 44.5px;
+            padding-right: 44.5px;
+            gap: 15px;
+        }
+
+        #info {
+            margin-top: 48px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        #contact input {
+            background-color: var(--light-bg);
+            border-width: 1px;
+            height: 58px;
+            width: 202px;
+            border-color: var(--muted-color);
+            border-radius: 0.5vh;
+            border-width: 1px;
+        }
+
+        #contact input::placeholder {
+            color: var(--second-text-color);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.2px;
+            line-height: 28px;
+            font-weight: normal;
+            padding-left: 10%;
+        }
+
+        div #c-get-in-touch button {
+            height: 58px;
+            width: 115px;
+            background-color: var(--primary-color);
+            border-style: none;
+            border-width: 1px;
+            border-color: var(--primary-color);
+            border-radius: 0.5vh;
+            cursor: pointer;
+            outline: none;
+            color: var(--light-bg);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.2px;
+            line-height: 28px;
+            font-weight: normal;
+        }
+
+        div #c-get-in-touch {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 323px;
+            height: 58px;
+        }
+
+        #info div #footer-container {
+            margin-top: 48px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .contact {
+            padding-top: 20px;
+        }
+
+        /*Footer -------------------------------------------------------------------------------------------------*/
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 25px;
+            background-color: var(--light-text-gray);
+            color:var(--t)
+            padding-bottom: 25px;
+        }
+
+        #footer-limiter {
+            padding-left: 110.5px;
+            padding-right: 110.5px;
+            gap: 15px;
+            display: flex;
+            text-align: center;
+            padding-bottom: 25px;
+        }
+    }
+
 }
