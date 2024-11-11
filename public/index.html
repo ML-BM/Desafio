@@ -13,23 +13,24 @@
         <nav>
              <!--header com os ícones que irão aparecer no design responsivo para mobile-->
              <ul class="nav-links" id="nav-links">
-                <h3>Bandage</h3>
-                <img src="../src/assets/search.png">
-                <img src="../src/assets/shop.png">
-                <img src="../src/assets/menu.png">
+                <section id="logo">
+                    <h3>Bandage</h3>
+                </section>
+                <section id="topics">
+                    <img src="../src/assets/search.png">
+                    <img src="../src/assets/shop.png">
+                    <img src="../src/assets/menu.png">
+                </section>
              </ul>
-            <a class="menu-toggle" id="menu-toggle" aria-label="Menu button" aria-expanded="false">
-            </a>
+             <div id="dropdown" class="dropdown-content">
+                <a href="#home">Home</a>
+                <a href="#product">Product</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </div>
         </nav>
-        <section id="sec=nav">
-             <!--header com os ícones que irão aparecer no design wed padrão-->
-             <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#product">Product</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <section id="sec-nav">
+             
         </section>
     </header>
     <main>
@@ -279,6 +280,30 @@
             </div>
         </section>        
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('menuButton');
+            const dropdown = document.getElementById('dropdown');
+
+            menuButton.addEventListener('click', function() {
+                dropdown.classList.toggle('show');
+            });
+
+            window.addEventListener('click', function(event) {
+                if (!event.target.matches('#menuButton')) {
+                    const dropdowns = document.getElementsByClassName('dropdown-content');
+                    let i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        const openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
